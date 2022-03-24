@@ -1,10 +1,24 @@
 {% block body %}
 
-<h1>Section</h1>
+<h1>{{sec}}</h1>
 <h2>{{byId}}</h2>
+<h1>{{titre}}</h1>
+<h2>{{count}} {{ref}}</h2>
+
 
 <div class="ui four cards">
 {% for product in byId.products %}
+<div class="ui card">
+    {{img('store/'~product.image~'.jpg', {class:' '})}}
+    <h1>{{product.name}}</h1>
+    <p>{{product.price}}</p>
+    <a href="{{ path('section.section',[section.id]) }}" class="ui green button">+ To cart</a>
+</div>
+{% endfor %}
+</div>
+
+<div class="ui six cards">
+{% for product in all %}
 <div class="ui card">
     {{img('store/'~product.image~'.jpg', {class:' '})}}
     <h1>{{product.name}}</h1>

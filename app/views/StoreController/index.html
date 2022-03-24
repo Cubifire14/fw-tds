@@ -1,6 +1,6 @@
 {% block body %}
 
-<button class="ui green button">Parcourir le store ({{count}} produits)</button>
+<a href="{{ path('allProducts')}}" class="ui green button">Parcourir le store ({{count}} produits)</a>
 
 <div class="ui four cards">
 {% for section in all %}
