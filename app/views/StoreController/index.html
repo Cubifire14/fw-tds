@@ -1,15 +1,14 @@
-{% block menu %}
-{% endblock %}
 {% block body %}
 
 <button class="ui green button">Parcourir le store ({{count}} produits)</button>
 
+<div class="ui four cards">
 {% for section in all %}
     <div class="ui card">
         <h1>{{section.name}}</h1>
         <p>{{section.description}}</p>
-        <a href="{{ path('main.vFooter') }}" class="ui green button">Consulter produits</a>
-        <button class="ui green button"></button>
+        <a href="{{ path('section.section',[section.id]) }}" class="ui green button">Consulter produits ({{section.products|length}})</a>
     </div>
 {% endfor %}
+</div>
 {% endblock %}
